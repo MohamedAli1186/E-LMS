@@ -1,0 +1,117 @@
+<app-instructor-navbar></app-instructor-navbar>
+<section>
+ <div class="row">
+    
+    <div class="col-md-8 d-flex flex-column justify-content-center">
+        <h1 style="color: white;" class="mt-0">Welcome doctor {{iname}}</h1>
+      
+      
+    </div>
+  </div>
+<div class="listt">
+<h4 class="text-center ">{{title}}</h4>
+
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+@if(isAvailable){
+  <table  id="ta">
+    <thead>
+        <tr>
+            <th>Courses</th>
+            <th>Delete</th>              
+        </tr>
+    </thead>
+    <tbody>
+        @for(task of Cours; track $index){
+        <tr>
+            <td colspan="3">    
+                <div class="card" style="width: 100%;">
+                    <div class="d-flex align-items-stretch">
+                        <a (click)="passID(task.id,task.name)">
+                            <img src="assets/{{task.imgsrc}}" class="img-fluid rounded-start" alt="Card image" style="width: 250px; height: auto;padding-top: 10px;">
+                        </a>
+                        <div class="flex-grow-1">
+                            <div class="card-body">
+                                <a (click)="passID(task.id,task.name)">
+                                    <h5 class="card-title" style="padding-top: 15px; color: #000;">{{task.name}}</h5>
+                                    <div class="col-md-12">
+                                        <p class="card-text" style="padding-bottom: 10px;color: #000;">{{task.description}}</p>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <p class="card-text" style="padding-bottom: 10px;color: #000;">hours: {{task.hours}}</p>
+                                    </div>
+                                </a>
+                                <div class="row">
+                                    <div class="col-md-6 d-flex justify-content-end">
+                                    </div>
+                                    <div class="col-md-6 d-flex justify-content-start">
+                                        <button class="bn29" (click)="removeCourse(task.id)">Remove</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+
+  }
+  </div>
+  </div> 
+</div>
+
+<div class="buttondiv">
+  <button class="bn29"id="btnn" type="button" (click)="ShowAddCourse()">Add Course</button>  
+</div>
+</div>
+@if (showAddCourse) {
+<div class="container">
+  <div class="row">
+  
+        <div class="row text-center">
+          <div >
+            <input class="form-control mb-3" [(ngModel)]="course.title" placeholder="name" />
+            <input class="form-control mb-3" [(ngModel)]="course.description" placeholder="Description" />
+            <input class="form-control mb-3" [(ngModel)]="course.hours" placeholder="Hours" />
+            
+            <input type="file" class="form-control" (change)="handleFileInput($event)" id="customFile" />
+
+          </div> <br>
+          <div > <br>
+            <button class="bn29" type="button" (click)="addCourse()">Add Course</button>  
+          </div>
+        </div>
+      </div>
+  </div>
+}
+@else if (showEditCourse) 
+{
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 d-flex justify-content-center">
+      <div class="col-sm-4 border rounded p-3 mb-5">
+        <div class="row text-center">
+          <div class="col-sm-12">
+            <input class="form-control mb-3" [(ngModel)]="course.title" placeholder="Course name" />
+            <input class="form-control mb-3" [(ngModel)]="course.description" placeholder="Course Description" />
+            <input class="form-control mb-3" [(ngModel)]="course.hours" placeholder="Course hours" />
+            
+            <input type="file" class="form-control"(change)="handleFileInput($event)" id="customFile" />
+          </div> <br>
+          <div> <br>
+            <button class="custom-button" type="button" (click)="editCourse(cid)">update Course</button>  
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+}</section>
+
+<app-footer></app-footer>

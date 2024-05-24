@@ -1,0 +1,17 @@
+<div class="container">
+    <h2 class="heading" style="text-align: center;">Course Modifications</h2>
+
+    <form (ngSubmit)="EditCourse()" #taskform="ngForm" id="taskForm" class="task-form">
+        <div class="form-group">
+            <label for="name" class="form-label">Title:</label>
+            <input type="text" [(ngModel)]="cname" class="form-control" id="name" name="name" placeholder="Enter task title">
+        </div>
+        
+        <div class="form-group">
+            <label for="description" class="form-label">Description:</label>
+            <textarea class="form-control" id="description" [(ngModel)]="cdescription" name="description" rows="3" placeholder="Describe the task"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Edit Course</button>
+    </form>
+</div>

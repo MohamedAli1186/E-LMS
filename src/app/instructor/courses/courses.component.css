@@ -1,0 +1,127 @@
+.listt {
+  padding-right: 200px;
+  padding-left: 200px;
+  padding-top: 30px;
+  padding-bottom: 40px;
+
+}
+.custom-button {
+  border-radius: 20px; /* Adjust the radius value to your desired value */
+  background-color: #DD6AA7; /* Adjust the color value to your desired color */
+  color: #ffffff; /* Adjust the text color to ensure readability */
+  padding: 8px 16px; /* Adjust the padding to provide appropriate button size */
+  border: none; /* Remove the default button border */
+}
+.buttondiv{
+padding-top: 80px;
+  
+}section{
+  width: 99%;
+  height: 100vh;
+  background-color: #0093E9;
+background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+
+
+}
+.custom-button {
+  display: block;
+  margin: auto;
+}
+/* Table styles */
+table {
+  margin: 0 auto;
+  width: 80%;
+  border-collapse: collapse;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+  text-align: center;
+
+}
+
+table th {
+  background-color: #f2f2f2;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}table tr {
+  background-color: #f2f2f2;
+}
+
+
+table tr:hover {
+  background-color: #f1f1f1;
+}
+.menu {
+  position: absolute; /* Adjust positioning as needed */
+  background-color: #f1f1f1;
+  padding: 10px;
+}
+
+.hidden {
+  display: none;
+}
+.profile{
+  padding-top: 50px;
+}
+.container2{
+  padding-top: 80px;
+}.bn29 {
+  border: none;
+  padding: 0.8em 2.5em;
+  outline: none;
+  color: white;
+  font-style: 1.2em;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  background: none;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.45);
+}
+
+.bn29:before,
+.bn29:after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 10em;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  width: 105%;
+  height: 105%;
+  content: "";
+  z-index: -2;
+  background-size: 400% 400%;
+  background: linear-gradient(
+    60deg,
+    #f79533,
+    #f37055,
+    #ef4e7b,
+    #a166ab,
+    #5073b8,
+    #1098ad,
+    #07b39b,
+    #6fba82
+  );
+}
+
+.bn29:before {
+  -webkit-filter: blur(7px);
+  filter: blur(7px);
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  -webkit-animation: pulse 10s infinite ease;
+  animation: pulse 10s infinite ease;
+}
+
+.bn29:after {
+  -webkit-filter: blur(0.3px);
+  filter: blur(0.3px);
+}
+
+.bn29:hover:before {
+  width: 115%;
+  height: 115%;
+}

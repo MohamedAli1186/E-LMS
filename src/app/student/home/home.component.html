@@ -1,0 +1,27 @@
+<app-student-navbar></app-student-navbar>
+
+<section>
+  <div class="container mt-4">
+    <h1 style="text-align: center;">Courses table</h1>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Course Name</th>
+          <th scope="col">Description</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let course of courses; let i = index">
+          <td>{{ course.name }}</td>
+          <td>{{ course.description }}</td>
+          <td>
+            <button type="button" class="btn btn-primary" (click)="saveInfo(course.id, course.name)">View Course</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<app-footer></app-footer>

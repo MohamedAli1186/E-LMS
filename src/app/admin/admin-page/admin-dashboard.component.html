@@ -1,0 +1,177 @@
+<!DOCTYPE html><app-header></app-header>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LMS</title>
+    <link rel="stylesheet" href="admin-dashboard.component.css" />
+  </head>
+  <body>
+    <div>
+      <br />
+      <h1 class="text-center">Welcome Admin</h1>
+      <br />
+      <!-- Add buttons for course activities -->
+      <div class="actions">
+        <button (click)="toggleAddCourse()">Add New Course</button>
+        <button (click)="toggleEditCourses()">User Management</button>
+        <button (click)="toggleArchiveCourses()">Request Management</button>
+
+        <!-- Add buttons for enrollment activities -->
+        <!-- <button (click)="toggleAssignStudents()">Assign Students</button> -->
+        <!-- <button (click)="toggleManageEnrollment()">Manage Enrollment</button>
+        <button (click)="toggleAccessMaterials()">Access Course Materials</button> -->
+      </div>
+
+      <!-- Add New Course Form -->
+      <div *ngIf="showAddCourseForm">
+        <form (ngSubmit)="Add(taskform)" #taskform="ngForm">
+          <br />
+          <h3>Add new course</h3>
+
+          <br />
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              placeholder="Enter Course name"
+              ngModel
+              name="name"
+              required
+            />
+          </div>
+          <br />
+          <div class="form-group">
+            <input
+              class="form-control"
+              id="description"
+              placeholder="Add a description"
+              ngModel
+              name="description"
+              rows="3"
+            />
+          </div>
+          <br />
+          <button type="submit" class="btn btn-primary">Add Course</button>
+          <br />
+        </form>
+        <div>
+          <div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>Description</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let course of courses; index as i">
+                  <td>
+                    <p>{{ course.name }}</p>
+                  </td>
+                  <td>{{ course.description }}</td>
+                  <td>
+                    <button class="bn48" (click)="Delete(course.courseId)">
+                      Archive
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <br />
+    </div>
+
+    <!-- Edit Course Details Form -->
+    <div *ngIf="showEditCourseForm">
+      <br />
+      <div>
+        <div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>User ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let user of usrs; index as i">
+                <td>{{ i + 1 }}</td>
+                <td>{{ user.name }}</td>
+                <td>{{ user.email }}</td>
+                <td>
+                  <button
+                    class="bn48"
+                    [disabled]="user.Approved"
+                    (click)="Approveusers(user.email)"
+                  >
+                    {{ user.Approved ? "Approved" : "Approve" }}
+                  </button>
+                  <button class="bn48" (click)="removeusers(user.email)">
+                    Remove
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+      <!-- Archive Courses Table -->
+  <div *ngIf="showArchiveCoursesTable">
+
+    <div>
+        <div> <br>
+                    <table class="table">
+            <thead>
+              <tr>
+                <th>Student</th>
+                <th>Subject</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let req of requests; index as i">
+                <td>{{ req.studentName }}</td>
+                <td><p>{{ req.courseName }}</p></td>
+                <td>
+                  <button
+                    class="bn48"
+                    (click)="
+                      ApproveRequests(
+                        req.courseId,
+                        req.studentId,
+                        req.studentName
+                      )
+                    "
+                  >
+                    Approve
+                  </button>
+                  <button
+                    class="bn48"
+                    (click)="
+                      cancelRequests(
+                        req.courseId,
+                        req.studentId,
+                        req.studentName
+                      )
+                    "
+                  >
+                    cancel
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+  </div>
+  </body>
+</html>

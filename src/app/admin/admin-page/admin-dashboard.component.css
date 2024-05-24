@@ -1,0 +1,143 @@
+/* Button container styles */
+.actions {
+    display: flex;
+    justify-content: center; /* Center the buttons horizontally */
+    gap: 10%; /* Add a 10% gap between buttons */
+  }
+  .bn48 {
+    background: linear-gradient(90deg, #1e39a5, #c50e07);
+    background-size: auto;
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-size: 300% 300%;
+    -webkit-text-fill-color: transparent;
+    
+  }
+  .container {
+    width: 35vw; /* Increase the width of the container */
+    height: 50vh; /* Increase the height of the container */
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #d3dde460;
+  }
+  /* Button styles */
+  button {
+    padding: 12px 20px;
+    font-size: 18px;
+    background-color: #FF5733; /* Red button color */
+    color: #fff;
+    border: none;
+    
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  button:hover {
+    background-color: #c94a25; /* Darker red on hover */
+  }
+  
+  button:last-child {
+    margin-bottom: 0; /* Remove margin from the last button */
+  }
+  
+  /* Text box styles */
+  input[type="text"],
+  textarea {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+  }
+  
+  /* Form styles */
+  form {
+    margin: 0 auto;
+    width: 70%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+  
+  /* Header styles */
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: lighter;
+  }
+  
+  /* Manage Courses container styles */
+  .manage-courses {
+    margin: 50px auto;
+    width: 80%;
+    max-width: 800px;
+  }
+  input{
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+  }
+
+
+ /* Table styles */
+table {
+  margin: 0 auto;
+  width: 80%;
+  border-collapse: collapse;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+  text-align: center;
+
+}
+
+table th {
+  background-color: #f2f2f2;
+}
+
+table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+table tr:hover {
+  background-color: #f1f1f1;
+}
+  /* Custom select styles */
+  select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    background-color: #fff; /* White background */
+    appearance: none; /* Remove default arrow icon */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23000000"><path d="M7 10l5 5 5-5z" /></svg>'); /* Custom arrow icon */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+  }
+  
+  /* Hover styles */
+  select:hover {
+    border-color: #aaa; /* Lighter border color on hover */
+  }
+  
+  /* Focus styles */
+  select:focus {
+    border-color: #007bff; /* Blue border color on focus */
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Blue shadow on focus */
+  }
+  

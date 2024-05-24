@@ -1,0 +1,213 @@
+/* main css */ 
+
+.img{
+    padding-bottom: 20px;
+  }
+.custom-button {
+    border-radius: 8px; /* Adjust the radius value to your desired value */
+    background-color: #b8adb3; /* Adjust the color value to your desired color */
+    color: #ffffff; /* Adjust the text color to ensure readability */
+    padding: 8px 16px; /* Adjust the padding to provide appropriate button size */
+    border: none; /* Remove the default button border */
+}
+.custom-button.clicked{
+    background-color: #DD6AA7; 
+}
+.buttondiv{
+    padding-top: 10px;
+    padding-left: 60px;
+    padding-bottom:30px ;  
+}
+.buttondiv button {
+    margin-right: 30px; /* Adjust the value as per your desired spacing */
+}
+.add-button {
+    border-radius: 8px; /* Adjust the radius value to your desired value */
+    background-color: #DD6AA7; /* Adjust the color value to your desired color */
+    color: #ffffff; /* Adjust the text color to ensure readability */
+    padding: 8px 16px; /* Adjust the padding to provide appropriate button size */
+    border: none; /* Remove the default button border */
+}
+
+/* overview css */ 
+  
+.course-rating-container,
+.comments-container {
+    background-color: #fdf1e1;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.login-container {
+    width: 35vw; /* Increase the width of the container */
+    height: 50vh; /* Increase the height of the container */
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #d3dde460;
+  }
+.enroll-button-container,
+.course-details-container {
+    background-color: #67f3e7;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.btn-enroll {
+    background-color: #dc6ca4;
+    border-color: #dc6ca4;
+}
+
+.nav-tabs .nav-link.active {
+    background-color: #DD6AA7;
+    color: white;
+}
+
+.img-fluid {
+
+    height: 450px;
+}
+
+/* Existing CSS styles */
+
+.comment {
+    margin-bottom: 10px;
+}
+
+.comment p {
+    margin-bottom: 5px;
+}
+
+.author {
+    font-style: italic;
+    color: #777;
+}
+
+.rating {
+    color: #db5f9a; /* Star color */
+    font-size: 24px; /* Adjust size as needed */
+}
+
+.star-half {
+    position: relative;
+    display: inline-block;
+}
+
+.star-half::before {
+    content: '\f089'; /* Unicode for half star */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    width: 50%;
+    overflow: hidden;
+}
+
+/* course content css */ 
+
+
+/* assignment css */ 
+
+.upload-area {
+    border: 2px dashed #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}.btn41-43 {
+    padding: 10px 25px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    background: transparent;
+    outline: none !important;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .btn-42 {
+    border: 2px solid rgb(255, 255, 255);
+    z-index: 1;
+    color: white;
+  }
+  
+  .btn-42:after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background: rgb(255, 255, 255);
+    transition: all 0.3s ease;
+  }
+  
+  .btn-42:hover {
+    color: rgb(0, 0, 0);
+  }
+  
+  .btn-42:hover:after {
+    top: 0;
+    height: 100%;
+  }
+  
+  .btn-42:active {
+    top: 2px;
+  }
+
+ 
+button {
+    background-color: #8ac4d29f;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  button:hover {
+    background-color: #1070888f;
+  }
+.nav-tabs .nav-link.active {
+    background-color: #DD6AA7;
+    color: white;
+}
+
+.btn-submit {
+    background-color: #de6ba7;
+    border-color: #de6ba7;
+}
+
+
+.img-fluid{
+    height: 500px;
+}
+
+
+/* grades css */ 
+
+.nav-tabs .nav-link.active {
+    background-color: #DD6AA7;
+    color: white;
+}
+
+.grades-container {
+    margin-top: 20px;
+    border: 1px solid #DD6AA7;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.img-fluid {
+
+    height: 500px;
+}
+section{
+    width: 100%;
+    height: 100vh;
+    background-color: #0093E9;
+  background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+  
+}  

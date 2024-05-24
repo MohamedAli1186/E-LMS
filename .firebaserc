@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "e-learning-8c259": {
+      "hosting": {
+        "e-learning": [
+          "e-learning-8c259"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "e-learning-8c259"
+  }
+}

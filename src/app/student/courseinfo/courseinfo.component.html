@@ -1,0 +1,112 @@
+<app-student-navbar></app-student-navbar>
+<section>
+  <br />
+  <h2
+    style="
+      padding-left: 30px;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+        'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      color: rgb(255, 255, 255);
+      text-align: center;
+    "
+  >
+    {{ name }} Course
+  </h2>
+  <div class="buttondiv">
+    <button
+      type="button"
+      [class.clicked]="button1Clicked"
+      (click)="toggleButtonState(1)"
+    >
+      Overview
+    </button>
+    <button
+      type="button"
+      [class.clicked]="button2Clicked"
+      (click)="toggleButtonState(2)"
+    >
+      Course Content
+    </button>
+  </div>
+
+  @if(button1Clicked){
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col">
+        <div class="row">
+          @if(!isStudentEnrolled) {
+          <div class="col-md-6">
+            <div>
+              <button class="btn41-43 btn-42" (click)="reqCourse()">
+                Enroll Now
+              </button>
+              <br />
+            </div>
+            <br />
+            <div>
+              <h2 style="color: aliceblue">Description:</h2>
+              <ul>
+                <li>
+                  Plants use sunlight, water, and carbon dioxide to create their
+                  own food (glucose) through a process called photosynthesis.
+                </li>
+                <li>
+                  literally meaning "light synthesis". This process is essential
+                  for life on Earth as we know it, as it provides the base of
+                  the food chain.
+                </li>
+              </ul>
+            </div>
+          </div>
+          } @else if (isStudentEnrolled) {
+          <div>
+            <div>
+              <p style="font-size: larger; color: white">
+                This project you've already enrolled
+              </p>
+              <p style="color: red">Your progress is 0%</p>
+            </div>
+          </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+  } @else if(button2Clicked){ @if(!isStudentEnrolled){
+  <h2 style="color: white">Enroll it first!!</h2>
+  } @else {
+  <div class="d-flex" id="chapters">
+    <div class="w-40">
+      <div class="list-group ps-5 pt-1 pb-4" *ngFor="let coursee of course">
+        <label class="list-group-item list-group-item-gray">
+          <input
+            class="form-check-input me-1"
+            type="checkbox"
+            (change)="addseecourse(coursee.id, $event)"
+            [checked]="coursee.checked"
+          />
+          {{ coursee.name }}: {{ coursee.description }}
+        </label>
+        <label
+          class="list-group-item list-group-item-gray"
+          style="padding-left: 40px"
+        >
+        </label>
+      </div>
+    </div>
+    <div class="w-0" style="padding-left: 150px; padding-top: 20px; width: 70%">
+      <mdb-accordion [flush]="true">
+        <mdb-accordion-item *ngFor="let coursee of course">
+          <ng-template mdbAccordionItemHeader
+            >{{ coursee.name }}: {{ coursee.description }}</ng-template
+          >
+          <ng-template mdbAccordionItemBody>
+            <a href="assets/{{ coursee.pdfLink }}">{{ coursee.pdfLink }}</a>
+          </ng-template>
+        </mdb-accordion-item>
+      </mdb-accordion>
+    </div>
+  </div>
+  }}
+</section>
+<app-footer></app-footer>
